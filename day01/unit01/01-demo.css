@@ -1,0 +1,20 @@
+.container {
+    width: 300px;
+    height: 500px;
+    background: lightgray;
+}
+.header {
+    width: 100%;
+    height: 20%;
+    background: red;
+}
+.main {
+    width: 100%;
+    height: 70%;
+    background: yellow;
+}
+.footer {
+    width: 100%;
+    height: 10%;
+    background: blue;
+}

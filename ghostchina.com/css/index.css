@@ -1,0 +1,83 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+html body {
+    background-color: rgb(235, 235, 235);
+}
+
+/*header-----------------------------------------------*/
+
+.header {
+    width: 100%;
+    height: 98px;
+    background-image: url("../img/background.jpg");
+    background-position: center;
+    padding: 62px 0;
+}
+
+.header .container {
+    /*background-color: blue;*/
+}
+
+.header .container a{
+    padding: 0 calc(50% - 30px);
+}
+
+
+/*navigation--------------------------------------------*/
+
+.navigation {
+    margin-bottom: 35px;
+}
+
+.navigation .container {
+    background-color: white;
+}
+
+.navigation .container .nav-pc {
+    font-size: 14px;
+}
+
+.navigation .container .nav-pc ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.navigation .container .nav-pc ul li {
+    padding: 0 21px;
+    height: 56px;
+    text-align: center;
+    line-height: 56px;
+    color: #505050;
+}
+
+.navigation .container .nav-pc ul li:hover {
+    color: #e67e22;
+    border-bottom: 2px solid #e67e22;
+}
+
+.navigation .container .nav-pc ul li a {
+    color: #505050;
+    text-decoration: none;
+}
+
+
+/*content-wrap------------------------------------------*/
+
+.content-wrap {
+    width: 1002px;
+    height: 400px;
+    background: yellow;
+}
+
+
+/*footer------------------------------------------------*/
+.footer {
+    width: 100%;
+    height: 400px;
+    background: blue;
+}

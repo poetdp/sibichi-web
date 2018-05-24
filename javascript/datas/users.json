@@ -1,0 +1,7 @@
+[
+  {"userId":"admin@163.com", "userPassword":"111111", "userIcon":"", "userPhone":"17777771111"},
+  {"userId":"user1@163.com", "userPassword":"222222", "userIcon":"", "userPhone":"17777772222"},
+  {"userId":"user2@163.com", "userPassword":"333333", "userIcon":"", "userPhone":"17777773333"},
+  {"userId":"user3@163.com", "userPassword":"444444", "userIcon":"", "userPhone":"17777774444"},
+  {"userId":"user4@163.com", "userPassword":"555555", "userIcon":"", "userPhone":"17777775555"}
+]
