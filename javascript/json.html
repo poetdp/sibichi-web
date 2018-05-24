@@ -2,9 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>json</title>
+    <style>
+        #inputWrongUsername, #inputWrongPassword {
+            display: none;
+            color: red;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.js"></script>
 </head>
 <body>
-$END$
+<input type="email" class="txtEmail" value="admin@163.com" required>
+<input type="password" class="txtPassword" value="111111" required>
+<button id="btnlogin">登录</button>
+<div id="inputWrongUsername">* 用户名错误</div>
+<div id="inputWrongPassword">* 密码错误</div>
+<script>
+    // JSON----------------------------------------------------
+    var user = {"name":"tom", "age":12};
+    console.log(user);
+    console.log(user.name);
+    $.each(user, function (key, val) {
+        console.log(key + ":" + val);
+    })
+
+    var users = [
+        {"name":"a", "age":12},
+        {"name":"b", "age":12},
+        {"name":"c", "age":12},
+        {"name":"d", "age":12}
+    ];
+    for (let i in users) {
+        console.log(users[i].name);
+    }
+
+    console.log("{\"name\":\"tom\", \"age\":12}");
+    console.log(JSON.parse("{\"name\":\"tom\", \"age\":12}"));
+    console.log(JSON.stringify(user));
+
+    // 登录按钮
+    $('#btnlogin').click(function () {
+        var email = $('.txtEmail').val();
+        var password = $('.txtPassword').val();
+
+        var user = {"userId":email, "userPassword":password};
+
+        $.ajax(
+            {
+                url: './datas/users.json',
+                type: 'get',
+                dataType: 'json',
+                data: user,
+                success: function (response) {
+                    console.log(response);
+                    let flag = false;
+                    for (let i = 0; i < response.length; ++i) {
+                        console.log(response[i]);
+                        if (response[i].userId == user.userId) {
+                            flag = true;
+                            if (response[i].userPassword == user.userPassword) {
+                                alert("登录成功");
+                            }
+                            else {
+                                $('#inputWrongPassword').show();
+                            }
+                            break;
+                        }
+                    }
+                    if (flag == false) {
+                        $('#inputWrongUsername').show();
+                    }
+                },
+                error: function (errInfo) {
+                    console.log(errInfo);
+                }
+            }
+        )
+    })
+</script>
 </body>
 </html>
